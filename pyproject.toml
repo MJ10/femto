@@ -1,0 +1,25 @@
+[project]
+name = "femto"
+version = "1.0.0"
+description = "Femto: a 48M-parameter tool-using language model trained from scratch in pure JAX, nanochat-style"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "jax[cuda12]>=0.11 ; sys_platform == 'linux'",
+    "jax>=0.11 ; sys_platform == 'darwin'",
+    "numpy",
+    "wandb",
+    "pyarrow>=25.0.1",
+    "huggingface-hub>=2.1.1",
+    "tiktoken>=0.14.0",
+    "rustbpe>=0.1.0",
+    "pyyaml>=6.0.3",
+]
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
